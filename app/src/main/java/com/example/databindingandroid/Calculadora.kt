@@ -40,8 +40,10 @@ class Calculadora : AppCompatActivity() {
         btnSomar.setOnClickListener {
             if(edtPrimeiraEntrada.text.isBlank()){
                 edtPrimeiraEntrada.error = ms
-            }else{escolha = 1
+            }
+            else{escolha = 1
                 edtSegundaEntrada.requestFocus()
+                txtMensagem.setTextColor(android.graphics.Color.WHITE)
                 txtMensagem.text = "${edtPrimeiraEntrada.text}+"
             }
         }
@@ -50,6 +52,7 @@ class Calculadora : AppCompatActivity() {
                 edtPrimeiraEntrada.error = ms
             }else{escolha = 2
                 edtSegundaEntrada.requestFocus()
+                txtMensagem.setTextColor(android.graphics.Color.WHITE)
                 txtMensagem.text = "${edtPrimeiraEntrada.text}-"
             }
         }
@@ -58,6 +61,7 @@ class Calculadora : AppCompatActivity() {
                 edtPrimeiraEntrada.error = ms
             }else{escolha = 3
                 edtSegundaEntrada.requestFocus()
+                txtMensagem.setTextColor(android.graphics.Color.WHITE)
                 txtMensagem.text = "${edtPrimeiraEntrada.text}*"
             }
         }
@@ -66,6 +70,7 @@ class Calculadora : AppCompatActivity() {
                 edtPrimeiraEntrada.error = ms
             }else{escolha = 4
                 edtSegundaEntrada.requestFocus()
+                txtMensagem.setTextColor(android.graphics.Color.WHITE)
                 txtMensagem.text = "${edtPrimeiraEntrada.text}/"
             }
         }
@@ -73,15 +78,15 @@ class Calculadora : AppCompatActivity() {
         btnResultad.setOnClickListener {
             val Primeiro = edtPrimeiraEntrada.text.toString()
             val Segundo = edtSegundaEntrada.text.toString()
+            txtMensagem.setTextColor(android.graphics.Color.WHITE)
 
             if(Primeiro.isEmpty() || Segundo.isEmpty()){
                 txtResultado.text = "0"
                 txtMensagem.text = "0="
                 edtPrimeiraEntrada.requestFocus()
-                txtMensagem.setTextColor(resources.getColor(android.R.color.white, null))
+
             }
             else{
-                txtMensagem.setTextColor(resources.getColor(android.R.color.white, null))
                 val n1 = Primeiro.toDouble()
                 val n2 = Segundo.toDouble()
 
@@ -105,6 +110,7 @@ class Calculadora : AppCompatActivity() {
                         mensagem= "Não é possível dividir por zero"
                         txtResultado.text ="0"
                     }
+
 
                 }else-> mensagem = "Operação invalida"
 
